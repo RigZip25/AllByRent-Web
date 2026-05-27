@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://allbyrent.com/sitemap.xml
+
+# Block app internals from indexing
+Disallow: /api/
+Disallow: /auth/
+Disallow: /dashboard/
+Disallow: /_next/
+Disallow: /static/
+
+# Allow major crawlers explicitly
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
