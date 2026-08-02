@@ -1,65 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-(function () {
-  try {
-    var path = location.pathname || "/";
-    if (path !== "/" && path !== "") return;
-
-    var q = new URLSearchParams(location.search);
-    if (q.get("lang") === "en" || q.get("nolang") === "1") {
-      try { sessionStorage.setItem("evorios_apex_lang", "en"); } catch (e) {}
-      return;
-    }
-    try {
-      if (sessionStorage.getItem("evorios_apex_lang") === "en") return;
-    } catch (e) {}
-
-    var destByPrimary = {
-      cs: "/cs/",
-      sk: "/sk/",
-      pl: "/pl/",
-      pt: "/pt/",
-      es: "/es-mx/"
-    };
-
-    var tags = (navigator.languages && navigator.languages.length)
-      ? Array.prototype.slice.call(navigator.languages)
-      : [];
-    if (navigator.language) tags.push(navigator.language);
-
-    for (var i = 0; i < tags.length; i++) {
-      var raw = String(tags[i] || "").trim().toLowerCase().replace(/_/g, "-");
-      if (!raw) continue;
-      if (raw.indexOf("es-mx") === 0 || raw.indexOf("es-419") === 0) {
-        location.replace("/es-mx/");
-        return;
-      }
-      var primary = raw.split("-")[0];
-      if (primary === "en") return;
-      var dest = destByPrimary[primary];
-      if (dest) {
-        location.replace(dest);
-        return;
-      }
-    }
-  } catch (e) {}
-})();
-</script>
-<link rel="alternate" hreflang="en" href="https://evorios.com/">
-<link rel="alternate" hreflang="cs" href="https://evorios.com/cs/">
-<link rel="alternate" hreflang="sk" href="https://evorios.com/sk/">
-<link rel="alternate" hreflang="pl" href="https://evorios.com/pl/">
-<link rel="alternate" hreflang="pt-BR" href="https://evorios.com/pt/">
-<link rel="alternate" hreflang="es-MX" href="https://evorios.com/es-mx/">
-<link rel="alternate" hreflang="x-default" href="https://evorios.com/">
 <script>document.documentElement.classList.add('js')</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Evorios — The evolution of ownership</title>
 <meta name="robots" content="index, follow">
 <meta name="description" content="Rent, sell, or gift idle stuff to neighbors nearby. Deposit-protected, verified, QR-tracked. Every household is a business cell.">
+<link rel="alternate" hreflang="en" href="https://evorios.com/">
+<link rel="alternate" hreflang="cs" href="https://evorios.com/cs/">
+<link rel="alternate" hreflang="sk" href="https://evorios.com/sk/">
+<link rel="alternate" hreflang="pl" href="https://evorios.com/pl/">
+<link rel="alternate" hreflang="de" href="https://evorios.com/de/">
+<link rel="alternate" hreflang="fr" href="https://evorios.com/fr/">
+<link rel="alternate" hreflang="it" href="https://evorios.com/it/">
+<link rel="alternate" hreflang="pt-BR" href="https://evorios.com/pt/">
+<link rel="alternate" hreflang="pt-PT" href="https://evorios.com/pt-pt/">
+<link rel="alternate" hreflang="es" href="https://evorios.com/es/">
+<link rel="alternate" hreflang="es-ES" href="https://evorios.com/es/">
+<link rel="alternate" hreflang="es-MX" href="https://evorios.com/es-mx/">
+<link rel="alternate" hreflang="es-CL" href="https://evorios.com/es-cl/">
+<link rel="alternate" hreflang="es-AR" href="https://evorios.com/es-ar/">
+<link rel="alternate" hreflang="es-CO" href="https://evorios.com/es-co/">
+<link rel="alternate" hreflang="ru" href="https://evorios.com/ru/">
+<link rel="alternate" hreflang="uk" href="https://evorios.com/uk/">
+<link rel="alternate" hreflang="x-default" href="https://evorios.com/">
+<link rel="canonical" href="https://evorios.com/">
 <meta property="og:title" content="Evorios — The evolution of ownership">
 <meta property="og:description" content="Rent, sell, or gift idle stuff to neighbors nearby. Deposit-protected, verified, QR-tracked.">
 <meta property="og:type" content="website">
@@ -69,7 +35,6 @@
 <meta name="twitter:title" content="Evorios — The evolution of ownership">
 <meta name="twitter:description" content="Open your garage to the block — rent, buy, or gift idle stuff to neighbors nearby.">
 <meta name="twitter:image" content="https://evorios.com/og-cover.png">
-<link rel="canonical" href="https://evorios.com/">
 <meta name="theme-color" content="#0D5C3A">
 <link rel="icon" type="image/png" href="No_back_rentano.png">
 <link rel="apple-touch-icon" href="No_back_rentano.png">
@@ -257,6 +222,8 @@ html.js .reveal.in{opacity:1;transform:none}
   .stat-n{font-size:48px}
   .rentano-top{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;margin-bottom:40px}
 }
+
+.mobile-menu .lang-toggle{padding:15px 24px;font-size:18px;font-weight:600;color:#333;border:0;border-top:1px solid #f2f2f2;background:none;text-align:left;width:100%;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-family:inherit}.lang-caret{transition:transform .2s;color:#0D5C3A}.lang-toggle.open .lang-caret{transform:rotate(180deg)}.lang-list{display:none;grid-template-columns:1fr 1fr;background:#fafafa;max-height:60vh;overflow-y:auto}.lang-list.open{display:grid}.mobile-menu .lang-list a{padding:12px 16px;font-size:15px;font-weight:500;color:#555;border-top:1px solid #f0f0f0;display:flex;gap:8px;align-items:baseline;border-left:1px solid #f0f0f0}.mobile-menu .lang-list a b{color:#0D5C3A;font-size:11px;font-weight:700;min-width:20px;letter-spacing:.02em}
 </style>
 <script type="application/ld+json">
 {
@@ -288,6 +255,25 @@ html.js .reveal.in{opacity:1;transform:none}
     <a href="#trust" onclick="closeMenu()">Trust & Safety</a>
     <a href="#travelers" onclick="closeMenu()">For travelers</a>
     <a href="#faq" onclick="closeMenu()">FAQ</a>
+    <button class="lang-toggle" onclick="toggleLang(this)" aria-expanded="false">🌐 Language <span class="lang-caret">▾</span></button>
+    <div class="lang-list" id="langList">
+      <a href="/?lang=en"><b>EN</b><span>English</span></a>
+      <a href="/de/"><b>DE</b><span>Deutsch</span></a>
+      <a href="/fr/"><b>FR</b><span>Français</span></a>
+      <a href="/it/"><b>IT</b><span>Italiano</span></a>
+      <a href="/pl/"><b>PL</b><span>Polski</span></a>
+      <a href="/cs/"><b>CS</b><span>Čeština</span></a>
+      <a href="/sk/"><b>SK</b><span>Slovenčina</span></a>
+      <a href="/es/"><b>ES</b><span>España</span></a>
+      <a href="/pt/"><b>BR</b><span>Brasil</span></a>
+      <a href="/pt-pt/"><b>PT</b><span>Portugal</span></a>
+      <a href="/es-mx/"><b>MX</b><span>México</span></a>
+      <a href="/uk/"><b>UA</b><span>Українська</span></a>
+      <a href="/es-cl/"><b>CL</b><span>Chile</span></a>
+      <a href="/es-ar/"><b>AR</b><span>Argentina</span></a>
+      <a href="/ru/"><b>RU</b><span>Русский</span></a>
+      <a href="/es-co/"><b>CO</b><span>Colombia</span></a>
+    </div>
   </div>
 </nav>
 
@@ -789,6 +775,7 @@ html.js .reveal.in{opacity:1;transform:none}
 
 
 <script>
+function toggleLang(btn){var l=document.getElementById('langList');var o=l.classList.toggle('open');btn.classList.toggle('open',o);btn.setAttribute('aria-expanded',o?'true':'false');}
 function toggleMenu(btn){var m=document.getElementById('mobileMenu');var open=m.classList.toggle('open');btn.classList.toggle('open',open);btn.setAttribute('aria-expanded',open?'true':'false');}
 function closeMenu(){var m=document.getElementById('mobileMenu');if(m)m.classList.remove('open');var b=document.querySelector('.burger');if(b){b.classList.remove('open');b.setAttribute('aria-expanded','false');}}
 </script>
