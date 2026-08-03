@@ -31,13 +31,16 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://evorios.com/uk/">
 <meta property="og:image" content="https://evorios.com/og-cover.png">
+<meta property="og:site_name" content="Evorios">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Evorios — Еволюція володіння">
 <meta name="twitter:description" content="Здавайте, продавайте або віддавайте те, чим не користуєтеся, сусідам поруч. Із заставою, перевіркою та відстеженням за QR.">
 <meta name="twitter:image" content="https://evorios.com/og-cover.png">
 <meta name="theme-color" content="#0D5C3A">
-<link rel="icon" type="image/png" href="No_back_rentano.png">
-<link rel="apple-touch-icon" href="No_back_rentano.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--g:#0D5C3A;--a:#F59E0B;--gl:#E8F5EE;--al:#FEF3CD}
@@ -227,8 +230,30 @@ html.js .reveal.in{opacity:1;transform:none}
 {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": "Organization", "@id": "https://evorios.com/#org", "name": "Evorios", "url": "https://evorios.com/", "logo": "https://evorios.com/No_back_rentano.png", "description": "A neighborhood marketplace where every household opens a garage to rent, buy, or give idle items to neighbors nearby." },
-    { "@type": "WebSite", "@id": "https://evorios.com/#site", "url": "https://evorios.com/", "name": "Evorios", "publisher": { "@id": "https://evorios.com/#org" } }
+    {
+      "@type": "Organization",
+      "@id": "https://evorios.com/#organization",
+      "name": "Evorios",
+      "legalName": "Evorios LLC",
+      "url": "https://evorios.com/",
+      "logo": "https://evorios.com/apple-touch-icon.png",
+      "email": "support@evorios.com",
+      "sameAs": [
+        "https://www.instagram.com/evorios",
+        "https://www.facebook.com/evorios",
+        "https://www.tiktok.com/@evorios",
+        "https://app.evorios.com"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://evorios.com/#website",
+      "url": "https://evorios.com/",
+      "name": "Evorios",
+      "alternateName": "Evorios — The evolution of ownership",
+      "publisher": { "@id": "https://evorios.com/#organization" },
+      "inLanguage": "uk"
+    }
   ]
 }
 </script>
