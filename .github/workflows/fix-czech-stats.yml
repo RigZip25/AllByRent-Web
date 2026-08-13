@@ -1,0 +1,131 @@
+name: Fix Czech stats layout
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-czech-stats.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Polish Czech stats block
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          p = Path('cs/index.html')
+          s = p.read_text(encoding='utf-8')
+          marker = 'EVORIOS_CZ_STATS_POLISH_V1'
+          if marker in s:
+              print('Czech stats polish already present; nothing to do.')
+          else:
+              payload = r'''
+<!-- EVORIOS_CZ_STATS_POLISH_V1 -->
+<style>
+  .ev-cz-stat-grid-fix{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;align-items:stretch!important;gap:0!important;}
+  .ev-cz-stat-cell-fix{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;min-width:0!important;min-height:210px!important;padding:30px 34px!important;position:relative!important;}
+  .ev-cz-stat-cell-fix + .ev-cz-stat-cell-fix{border-left:1px solid rgba(13,92,58,.13)!important;}
+  .ev-cz-stat-title-fix{font-size:clamp(44px,4.4vw,64px)!important;line-height:.98!important;letter-spacing:-.045em!important;font-weight:800!important;color:#0D5C3A!important;margin:0 0 16px!important;padding:0!important;border:0!important;min-height:0!important;}
+  .ev-cz-stat-title-fix::before,.ev-cz-stat-title-fix::after,
+  .ev-cz-stat-title-wrap-fix::before,.ev-cz-stat-title-wrap-fix::after{display:none!important;content:none!important;border:0!important;}
+  .ev-cz-stat-title-wrap-fix{border:0!important;padding:0!important;margin:0!important;min-height:0!important;}
+  .ev-cz-stat-copy-fix{font-size:clamp(17px,1.55vw,22px)!important;line-height:1.25!important;font-weight:500!important;color:#666B68!important;margin:0!important;max-width:250px!important;}
+  .ev-cz-stat-check-fix{font-size:50px!important;line-height:1!important;color:#0D5C3A!important;margin:0 0 12px!important;width:auto!important;height:auto!important;}
+  .ev-cz-stat-cell-fix svg.ev-cz-stat-check-fix{width:48px!important;height:48px!important;}
+  @media(max-width:700px){
+    .ev-cz-stat-grid-fix{grid-template-columns:1fr!important;}
+    .ev-cz-stat-cell-fix{min-height:0!important;padding:28px 20px!important;}
+    .ev-cz-stat-cell-fix + .ev-cz-stat-cell-fix{border-left:0!important;border-top:1px solid rgba(13,92,58,.13)!important;}
+    .ev-cz-stat-title-fix{font-size:44px!important;}
+  }
+</style>
+<script>
+(function(){
+  function norm(v){return (v||'').replace(/\s+/g,' ').trim();}
+  function leafByText(text){
+    var all=document.querySelectorAll('body *');
+    for(var i=0;i<all.length;i++){
+      var e=all[i];
+      if(norm(e.textContent)===text){
+        var exactChild=false;
+        for(var j=0;j<e.children.length;j++) if(norm(e.children[j].textContent)===text){exactChild=true;break;}
+        if(!exactChild) return e;
+      }
+    }
+    return null;
+  }
+  function directChildUnder(ancestor,node){
+    var n=node;
+    while(n && n.parentElement!==ancestor) n=n.parentElement;
+    return n && n.parentElement===ancestor ? n : null;
+  }
+  function findGrid(a,b,c){
+    var n=a.parentElement;
+    while(n && n!==document.body){
+      if(n.contains(b)&&n.contains(c)){
+        var ca=directChildUnder(n,a), cb=directChildUnder(n,b), cc=directChildUnder(n,c);
+        if(ca&&cb&&cc&&ca!==cb&&ca!==cc&&cb!==cc) return {grid:n,cells:[ca,cb,cc]};
+      }
+      n=n.parentElement;
+    }
+    return null;
+  }
+  function apply(){
+    var t1=leafByText('3'), t2=leafByText('Kauce'), t3=leafByText('Ověřeno');
+    var d1=leafByText('Půjčit · prodat · darovat'), d2=leafByText('Kauce u pronájmu'), d3=leafByText('Ověřené profily');
+    if(!(t1&&t2&&t3&&d1&&d2&&d3)) return;
+    var found=findGrid(t1,t2,t3);
+    if(!found) return;
+    found.grid.classList.add('ev-cz-stat-grid-fix');
+    found.cells.forEach(function(c){c.classList.add('ev-cz-stat-cell-fix');});
+    [t1,t2,t3].forEach(function(t){
+      t.classList.add('ev-cz-stat-title-fix');
+      if(t.parentElement) t.parentElement.classList.add('ev-cz-stat-title-wrap-fix');
+    });
+    [d1,d2,d3].forEach(function(d){d.classList.add('ev-cz-stat-copy-fix');});
+    var c3=found.cells[2], check=null;
+    var candidates=c3.querySelectorAll('*');
+    for(var i=0;i<candidates.length;i++){
+      var tx=norm(candidates[i].textContent);
+      if((tx==='✓'||tx==='✔'||tx==='√') && candidates[i]!==t3){check=candidates[i];break;}
+    }
+    if(!check){
+      var svgs=c3.querySelectorAll('svg');
+      if(svgs.length) check=svgs[0];
+    }
+    if(check) check.classList.add('ev-cz-stat-check-fix');
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',apply); else apply();
+})();
+</script>
+'''
+              if '</body>' not in s:
+                  raise SystemExit('Could not find </body>; refusing unsafe edit')
+              s = s.replace('</body>', payload + '\n</body>', 1)
+              p.write_text(s, encoding='utf-8')
+              print('Inserted Czech stats polish.')
+          PY
+
+      - name: Commit fix and remove one-time workflow
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/fix-czech-stats.yml
+          git add cs/index.html
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Polish Czech stats block layout"
+          git push origin HEAD:main
