@@ -16,106 +16,27 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: Polish Czech stats block
         shell: bash
+        env:
+          PAYLOAD_B64: CjwhLS0gRVZPUklPU19DWl9TVEFUU19QT0xJU0hfVjEgLS0+CjxzdHlsZT4KLmV2LWN6LXN0YXQtZ3JpZC1maXh7ZGlzcGxheTpncmlkIWltcG9ydGFudDtncmlkLXRlbXBsYXRlLWNvbHVtbnM6cmVwZWF0KDMsbWlubWF4KDAsMWZyKSkhaW1wb3J0YW50O2FsaWduLWl0ZW1zOnN0cmV0Y2ghaW1wb3J0YW50O2dhcDowIWltcG9ydGFudH0KLmV2LWN6LXN0YXQtY2VsbC1maXh7ZGlzcGxheTpmbGV4IWltcG9ydGFudDtmbGV4LWRpcmVjdGlvbjpjb2x1bW4haW1wb3J0YW50O2FsaWduLWl0ZW1zOmNlbnRlciFpbXBvcnRhbnQ7anVzdGlmeS1jb250ZW50OmNlbnRlciFpbXBvcnRhbnQ7dGV4dC1hbGlnbjpjZW50ZXIhaW1wb3J0YW50O21pbi13aWR0aDowIWltcG9ydGFudDttaW4taGVpZ2h0OjIxMHB4IWltcG9ydGFudDtwYWRkaW5nOjMwcHggMzRweCFpbXBvcnRhbnQ7cG9zaXRpb246cmVsYXRpdmUhaW1wb3J0YW50fQouZXYtY3otc3RhdC1jZWxsLWZpeCsuZXYtY3otc3RhdC1jZWxsLWZpeHtib3JkZXItbGVmdDoxcHggc29saWQgcmdiYSgxMyw5Miw1OCwuMTMpIWltcG9ydGFudH0KLmV2LWN6LXN0YXQtdGl0bGUtZml4e2ZvbnQtc2l6ZTpjbGFtcCg0NHB4LDQuNHZ3LDY0cHgpIWltcG9ydGFudDtsaW5lLWhlaWdodDouOTghaW1wb3J0YW50O2xldHRlci1zcGFjaW5nOi0uMDQ1ZW0haW1wb3J0YW50O2ZvbnQtd2VpZ2h0OjgwMCFpbXBvcnRhbnQ7Y29sb3I6IzBENUMzQSFpbXBvcnRhbnQ7bWFyZ2luOjAgMCAxNnB4IWltcG9ydGFudDtwYWRkaW5nOjAhaW1wb3J0YW50O2JvcmRlcjowIWltcG9ydGFudDttaW4taGVpZ2h0OjAhaW1wb3J0YW50fQouZXYtY3otc3RhdC10aXRsZS1maXg6OmJlZm9yZSwuZXYtY3otc3RhdC10aXRsZS1maXg6OmFmdGVyLC5ldi1jei1zdGF0LXRpdGxlLXdyYXAtZml4OjpiZWZvcmUsLmV2LWN6LXN0YXQtdGl0bGUtd3JhcC1maXg6OmFmdGVye2Rpc3BsYXk6bm9uZSFpbXBvcnRhbnQ7Y29udGVudDpub25lIWltcG9ydGFudDtib3JkZXI6MCFpbXBvcnRhbnR9Ci5ldi1jei1zdGF0LXRpdGxlLXdyYXAtZml4e2JvcmRlcjowIWltcG9ydGFudDtwYWRkaW5nOjAhaW1wb3J0YW50O21hcmdpbjowIWltcG9ydGFudDttaW4taGVpZ2h0OjAhaW1wb3J0YW50fQouZXYtY3otc3RhdC1jb3B5LWZpeHtmb250LXNpemU6Y2xhbXAoMTdweCwxLjU1dncsMjJweCkhaW1wb3J0YW50O2xpbmUtaGVpZ2h0OjEuMjUhaW1wb3J0YW50O2ZvbnQtd2VpZ2h0OjUwMCFpbXBvcnRhbnQ7Y29sb3I6IzY2NkI2OCFpbXBvcnRhbnQ7bWFyZ2luOjAhaW1wb3J0YW50O21heC13aWR0aDoyNTBweCFpbXBvcnRhbnR9Ci5ldi1jei1zdGF0LWNoZWNrLWZpeHtmb250LXNpemU6NTBweCFpbXBvcnRhbnQ7bGluZS1oZWlnaHQ6MSFpbXBvcnRhbnQ7Y29sb3I6IzBENUMzQSFpbXBvcnRhbnQ7bWFyZ2luOjAgMCAxMnB4IWltcG9ydGFudDt3aWR0aDphdXRvIWltcG9ydGFudDtoZWlnaHQ6YXV0byFpbXBvcnRhbnR9Ci5ldi1jei1zdGF0LWNlbGwtZml4IHN2Zy5ldi1jei1zdGF0LWNoZWNrLWZpeHt3aWR0aDo0OHB4IWltcG9ydGFudDtoZWlnaHQ6NDhweCFpbXBvcnRhbnR9CkBtZWRpYShtYXgtd2lkdGg6NzAwcHgpey5ldi1jei1zdGF0LWdyaWQtZml4e2dyaWQtdGVtcGxhdGUtY29sdW1uczoxZnIhaW1wb3J0YW50fS5ldi1jei1zdGF0LWNlbGwtZml4e21pbi1oZWlnaHQ6MCFpbXBvcnRhbnQ7cGFkZGluZzoyOHB4IDIwcHghaW1wb3J0YW50fS5ldi1jei1zdGF0LWNlbGwtZml4Ky5ldi1jei1zdGF0LWNlbGwtZml4e2JvcmRlci1sZWZ0OjAhaW1wb3J0YW50O2JvcmRlci10b3A6MXB4IHNvbGlkIHJnYmEoMTMsOTIsNTgsLjEzKSFpbXBvcnRhbnR9LmV2LWN6LXN0YXQtdGl0bGUtZml4e2ZvbnQtc2l6ZTo0NHB4IWltcG9ydGFudH19Cjwvc3R5bGU+CjxzY3JpcHQ+CihmdW5jdGlvbigpewpmdW5jdGlvbiBub3JtKHYpe3JldHVybih2fHwnJykucmVwbGFjZSgvXHMrL2csJyAnKS50cmltKCl9CmZ1bmN0aW9uIGxlYWZCeVRleHQodGV4dCl7dmFyIGFsbD1kb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCdib2R5IConKTtmb3IodmFyIGk9MDtpPGFsbC5sZW5ndGg7aSsrKXt2YXIgZT1hbGxbaV07aWYobm9ybShlLnRleHRDb250ZW50KT09PXRleHQpe3ZhciBleGFjdENoaWxkPWZhbHNlO2Zvcih2YXI gaj0wO2o8ZS5jaGlsZHJlbi5sZW5ndGg7aisrKWlmKG5vcm0oZS5jaGlsZHJlbltqXS50ZXh0Q29udGVudCk9PT10ZXh0KXtleGFjdENoaWxkPXRydWU7YnJlYWt9aWYoIWV4YWN0Q2hpbGQpcmV0dXJuIGV9fXJldHVybiBudWxsfQpmdW5jdGlvbiBkaXJlY3RDaGlsZFV uZGVyKGEsbil7d2hpbGUobiYmbi5wYXJlbnRFbGVtZW50IT09YSluPW4ucGFyZW50RWxlbWVudDtyZXR1cm4gbiYmbi5wYXJlbnRFbGVtZW50PT09YT9uOm51bGx9CmZ1bmN0aW9uIGZpbmRHcmlkKGEsYixjKXt2YXIgbj1hLnBhcmVudEVsZW1lbnQ7d2hpbGUobiYmbiE9PWRvY3VtZW50LmJvZHkpe2lmKG4uY29udGFpbnMoYikmJm4uY29udGFpbnMoYykpe3ZhciBjYT1kaXJlY3RDaGlsZFV uZGVyKG4sYSksY2I9ZGlyZWN0Q2hpbGRVbmRlcihuLGIpLGNjPWRpcmVjdENoaWxkVW5kZXIobixjKTtpZihjYSYmY2ImJmNjJiZjYSE9PWNiJiZjYSE9PWNjJiZjYiE9PWNjKXJldHVybntncmlkOm4sY2VsbHM6W2NhLGNiLGNjXX19bj1uLnBhcmVudEVsZW1lbnR9cmV0dXJuIG51bGx9CmZ1bmN0aW9uIGFwcGx5KCl7dmFyIHQxPWxlYWZCeVRleHQoJzMnKSx0Mj1sZWFmQnlUZXh0KCdLYXVjZScpLHQzPWxlYWZCeVRleHQoJ092xJvFmWVubycpO3ZhciBkMT1sZWFmQnlUZXh0KCdQxa9qxI1pdCDDtyBwcm9kYXQgwrcgZGFyb3ZhdCcpLGQyPWxlYWZCeVRleHQoJ0thdWNlIHUgcHJvbsOham11JyksZDM9bGVhZkJ5VGV4dCgnT3bEmcWZZW7DqSBwcm9maWx5Jyk7aWYoISh0MSYmdDImJnQzJiZkMSYmZDImJmQzKSlyZXR1cm47dmFyIGY9ZmluZEdyaWQodDEsdDIsdDMpO2lmKCFmKXJldHVybjtmLmdyaWQuY2xhc3NMaXN0LmFkZCgnZXYtY3otc3RhdC1ncmlkLWZpeCcpO2YuY2VsbHMuZm9yRWFjaChmdW5jdGlvbihjKXtjLmNsYXNzTGlzdC5hZGQoJ2V2LWN6LXN0YXQtY2VsbC1maXgnKX0pO1t0MSx0Mix0M10uZm9yRWFjaChmdW5jdGlvbih0KXt0LmNsYXNzTGlzdC5hZGQoJ2V2LWN6LXN0YXQtdGl0bGUtZml4Jyk7aWYodC5wYXJlbnRFbGVtZW50KXQucGFyZW50RWxlbWVudC5jbGFzc0xpc3QuYWRkKCdldi1jei1zdGF0LXRpdGxlLXdyYXAtZml4Jyl9KTtbZDEsZDIsZDNdLmZvckVhY2goZnVuY3Rpb24oZCl7ZC5jbGFzc0xpc3QuYWRkKCdldi1jei1zdGF0LWNvcHktZml4Jyl9KTt2YXIgYzM9Zi5jZWxsc1syXSxjaGVjaz1udWxsLGNzPWMzLnF1ZXJ5U2VsZWN0b3JBbGwoJyonKTtmb3IodmFyIGk9MDtpPGNzLmxlbmd0aDtpKyspe3ZhciB0eD1ub3JtKGNzW2ldLnRleHRDb250ZW50KTtpZigodHg9PT0n4pyTJ3x8dHg9PT0n4pyUJ3x8dHg9PT0n4oiaJykmJmNzW2ldIT09dDMpe2NoZWNrPWNzW2ldO2JyZWFrfX1pZighY2hlY2spe3ZhciBzdmdzPWMzLnF1ZXJ5U2VsZWN0b3JBbGwoJ3N2ZycpO2lmKHN2Z3MubGVuZ3RoKWNoZWNrPXN2Z3NbMF19aWYoY2hlY2spY2hlY2suY2xhc3NMaXN0LmFkZCgnZXYtY3otc3RhdC1jaGVjay1maXgnKX0KaWYoZG9jdW1lbnQucmVhZHlTdGF0ZT09PSdsb2FkaW5nJylkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKCdET01Db250ZW50TG9hZGVkJyxhcHBseSk7ZWxzZSBhcHBseSgpCn0pKCk7Cjwvc2NyaXB0Pgo=
         run: |
           python3 - <<'PY'
+          import base64, os
           from pathlib import Path
-
           p = Path('cs/index.html')
           s = p.read_text(encoding='utf-8')
           marker = 'EVORIOS_CZ_STATS_POLISH_V1'
-          if marker in s:
-              print('Czech stats polish already present; nothing to do.')
-          else:
-              payload = r'''
-<!-- EVORIOS_CZ_STATS_POLISH_V1 -->
-<style>
-  .ev-cz-stat-grid-fix{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;align-items:stretch!important;gap:0!important;}
-  .ev-cz-stat-cell-fix{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;min-width:0!important;min-height:210px!important;padding:30px 34px!important;position:relative!important;}
-  .ev-cz-stat-cell-fix + .ev-cz-stat-cell-fix{border-left:1px solid rgba(13,92,58,.13)!important;}
-  .ev-cz-stat-title-fix{font-size:clamp(44px,4.4vw,64px)!important;line-height:.98!important;letter-spacing:-.045em!important;font-weight:800!important;color:#0D5C3A!important;margin:0 0 16px!important;padding:0!important;border:0!important;min-height:0!important;}
-  .ev-cz-stat-title-fix::before,.ev-cz-stat-title-fix::after,
-  .ev-cz-stat-title-wrap-fix::before,.ev-cz-stat-title-wrap-fix::after{display:none!important;content:none!important;border:0!important;}
-  .ev-cz-stat-title-wrap-fix{border:0!important;padding:0!important;margin:0!important;min-height:0!important;}
-  .ev-cz-stat-copy-fix{font-size:clamp(17px,1.55vw,22px)!important;line-height:1.25!important;font-weight:500!important;color:#666B68!important;margin:0!important;max-width:250px!important;}
-  .ev-cz-stat-check-fix{font-size:50px!important;line-height:1!important;color:#0D5C3A!important;margin:0 0 12px!important;width:auto!important;height:auto!important;}
-  .ev-cz-stat-cell-fix svg.ev-cz-stat-check-fix{width:48px!important;height:48px!important;}
-  @media(max-width:700px){
-    .ev-cz-stat-grid-fix{grid-template-columns:1fr!important;}
-    .ev-cz-stat-cell-fix{min-height:0!important;padding:28px 20px!important;}
-    .ev-cz-stat-cell-fix + .ev-cz-stat-cell-fix{border-left:0!important;border-top:1px solid rgba(13,92,58,.13)!important;}
-    .ev-cz-stat-title-fix{font-size:44px!important;}
-  }
-</style>
-<script>
-(function(){
-  function norm(v){return (v||'').replace(/\s+/g,' ').trim();}
-  function leafByText(text){
-    var all=document.querySelectorAll('body *');
-    for(var i=0;i<all.length;i++){
-      var e=all[i];
-      if(norm(e.textContent)===text){
-        var exactChild=false;
-        for(var j=0;j<e.children.length;j++) if(norm(e.children[j].textContent)===text){exactChild=true;break;}
-        if(!exactChild) return e;
-      }
-    }
-    return null;
-  }
-  function directChildUnder(ancestor,node){
-    var n=node;
-    while(n && n.parentElement!==ancestor) n=n.parentElement;
-    return n && n.parentElement===ancestor ? n : null;
-  }
-  function findGrid(a,b,c){
-    var n=a.parentElement;
-    while(n && n!==document.body){
-      if(n.contains(b)&&n.contains(c)){
-        var ca=directChildUnder(n,a), cb=directChildUnder(n,b), cc=directChildUnder(n,c);
-        if(ca&&cb&&cc&&ca!==cb&&ca!==cc&&cb!==cc) return {grid:n,cells:[ca,cb,cc]};
-      }
-      n=n.parentElement;
-    }
-    return null;
-  }
-  function apply(){
-    var t1=leafByText('3'), t2=leafByText('Kauce'), t3=leafByText('Ověřeno');
-    var d1=leafByText('Půjčit · prodat · darovat'), d2=leafByText('Kauce u pronájmu'), d3=leafByText('Ověřené profily');
-    if(!(t1&&t2&&t3&&d1&&d2&&d3)) return;
-    var found=findGrid(t1,t2,t3);
-    if(!found) return;
-    found.grid.classList.add('ev-cz-stat-grid-fix');
-    found.cells.forEach(function(c){c.classList.add('ev-cz-stat-cell-fix');});
-    [t1,t2,t3].forEach(function(t){
-      t.classList.add('ev-cz-stat-title-fix');
-      if(t.parentElement) t.parentElement.classList.add('ev-cz-stat-title-wrap-fix');
-    });
-    [d1,d2,d3].forEach(function(d){d.classList.add('ev-cz-stat-copy-fix');});
-    var c3=found.cells[2], check=null;
-    var candidates=c3.querySelectorAll('*');
-    for(var i=0;i<candidates.length;i++){
-      var tx=norm(candidates[i].textContent);
-      if((tx==='✓'||tx==='✔'||tx==='√') && candidates[i]!==t3){check=candidates[i];break;}
-    }
-    if(!check){
-      var svgs=c3.querySelectorAll('svg');
-      if(svgs.length) check=svgs[0];
-    }
-    if(check) check.classList.add('ev-cz-stat-check-fix');
-  }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',apply); else apply();
-})();
-</script>
-'''
+          if marker not in s:
+              payload = base64.b64decode(os.environ['PAYLOAD_B64']).decode('utf-8')
               if '</body>' not in s:
                   raise SystemExit('Could not find </body>; refusing unsafe edit')
               s = s.replace('</body>', payload + '\n</body>', 1)
               p.write_text(s, encoding='utf-8')
               print('Inserted Czech stats polish.')
+          else:
+              print('Already present.')
           PY
-
       - name: Commit fix and remove one-time workflow
         shell: bash
         run: |
@@ -123,9 +44,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git rm .github/workflows/fix-czech-stats.yml
           git add cs/index.html
-          if git diff --cached --quiet; then
-            echo "No changes to commit"
-            exit 0
-          fi
           git commit -m "Polish Czech stats block layout"
           git push origin HEAD:main
