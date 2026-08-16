@@ -1,0 +1,250 @@
+0001	TEXT	Evorios — Půjč, prodej nebo daruj věci ve svém okolí
+0002	ATTR meta	Půjč, prodej nebo daruj věci lidem ve svém okolí. Najdi, co potřebuješ poblíž, s platbou v aplikaci, možností vratné kauce a záznamem předání přes QR kód.
+0003	ATTR meta	Evorios — Půjč, prodej nebo daruj věci ve svém okolí
+0004	ATTR meta	Věci, které potřebuješ, už možná má někdo vedle. Půjčuj, nakupuj, prodávej nebo daruj na jednom místě.
+0005	ATTR meta	Evorios — Půjč, prodej nebo daruj věci ve svém okolí
+0006	ATTR meta	Věci, které potřebuješ, už možná má někdo vedle. Půjčuj, nakupuj, prodávej nebo daruj na jednom místě.
+0007	ATTR div.aria-label	Zpět nahoru
+0008	TEXT	Evorios™
+0009	TEXT	Jak to funguje
+0010	TEXT	Bezpečnost
+0011	TEXT	Na cesty
+0012	TEXT	Časté otázky
+0013	TEXT	Otevřít Evorios
+0014	ATTR button.aria-label	Otevřít menu
+0015	TEXT	Jak to funguje
+0016	TEXT	Bezpečnost
+0017	TEXT	Na cesty
+0018	TEXT	Časté otázky
+0019	TEXT	Každý domov může být obchodem.
+0020	TEXT	To, co hledáš, už možná má někdo vedle.
+0021	TEXT	Evorios dává věci, které už jsou kolem nás, na jedno místní tržiště. Půjč si, co potřebuješ, kup to poblíž, najdi něco zdarma — nebo nabídni dál to, co doma jen leží.
+0022	ATTR img.alt	Aplikace Evorios
+0023	TEXT	3
+0024	TEXT	Půjčit · prodat · darovat
+0025	TEXT	Kauce
+0026	TEXT	Kauce u pronájmů
+0027	TEXT	Ověřeno ✓
+0028	TEXT	Ověřené profily
+0029	TEXT	Věci jsou blíž, než se zdá
+0030	TEXT	Spousta užitečných věcí už je ve tvém okolí.
+0031	TEXT	Byty, domy, garáže, dílny i malé firmy jsou plné věcí, které někdo jiný zrovna potřebuje. Evorios je ukáže na jednom místě lidem v okolí.
+0032	TEXT	Tvoje nabídka na Evorios
+0033	TEXT	Nabídni to, co už máš.
+0034	TEXT	Přidej své věci, vyber, jestli je chceš půjčit, prodat nebo darovat, a měj nabídky i přehled o výdělcích na jednom místě.
+0035	TEXT	Tento měsíc
+0036	TEXT	8 450 Kč
+0037	TEXT	Celkem
+0038	TEXT	79 300 Kč
+0039	TEXT	+18 % oproti minulému měsíci
+0040	TEXT	Odhad
+0041	TEXT	10 000 Kč
+0042	TEXT	do konce měsíce
+0043	TEXT	P
+0044	TEXT	Ú
+0045	TEXT	S
+0046	TEXT	Č
+0047	TEXT	P
+0048	TEXT	S
+0049	TEXT	N
+0050	TEXT	Nastav si měsíční cíl
+0051	TEXT	Nech pár věcí dostupných i o víkendu, kdy se mohou hodit víc lidem.
+0052	TEXT	Jen ukázka. Tvoje čísla začínají na nule a mění se podle toho, co půjčíš nebo prodáš.
+0053	TEXT	Tvoje výdělky
+0054	TEXT	Uvidíš, kolik jsi vydělal, které nabídky fungují nejlépe a jak se blížíš svému měsíčnímu cíli.
+0055	TEXT	Sdílej svoje nabídky
+0056	TEXT	Pošli přímý odkaz na nabídku nebo si zkopíruj připravenou zprávu.
+0057	TEXT	Pomoc s cenou
+0058	TEXT	Nevíš, jakou cenu nastavit? Mr. Evorios ti při vytváření nabídky navrhne, od čeho se odpíchnout.
+0059	TEXT	Věci, které nepoužíváš, pořád mají hodnotu
+0060	TEXT	Jedno hledání. Více možností.
+0061	TEXT	Na Evorios můžeš na jednom místě půjčovat, nakupovat i najít věci zdarma. U každé věci si vyber, co ti dává smysl.
+0062	TEXT	Můžeš vydělat
+0063	TEXT	2 500 Kč
+0064	TEXT	za měsíc
+0065	TEXT	Počet nabízených věcí
+0066	TEXT	10
+0067	ATTR input.aria-label	Počet nabízených věcí
+0068	TEXT	Čím víc užitečných věcí nabídneš, tím větší je šance, že si je někdo vybere.
+0069	TEXT	Můžeš ušetřit
+0070	TEXT	4 000 Kč
+0071	TEXT	za rok
+0072	TEXT	Kolikrát za rok si věc půjčíš místo koupě
+0073	TEXT	6
+0074	ATTR input.aria-label	Kolikrát za rok si věc půjčíš místo koupě
+0075	TEXT	Když něco potřebuješ jen na pár dní, nemusíš to hned kupovat.
+0076	TEXT	Co může být poblíž
+0077	TEXT	Od věcí do domácnosti po profesionální techniku.
+0078	TEXT	Najdi věci do domácnosti, vybavení pro koníčky, vozidla, pracovní nářadí i profesionální techniku — všechno ve svém okolí.
+0079	TEXT	Nářadí a dílna
+0080	TEXT	Zahrada
+0081	TEXT	Dům a kuchyně
+0082	TEXT	Děti
+0083	TEXT	Oslavy a akce
+0084	TEXT	Sport a volný čas
+0085	TEXT	Outdoor a kempování
+0086	TEXT	Elektronika
+0087	TEXT	Foto a video
+0088	TEXT	Kola a koloběžky
+0089	TEXT	Fitness
+0090	TEXT	Hudba a audio
+0091	TEXT	Vozidla
+0092	TEXT	Kostýmy
+0093	TEXT	Kancelář a podnikání
+0094	TEXT	Stavba
+0095	TEXT	Těžká technika
+0096	TEXT	Lodě a vodní sporty
+0097	TEXT	Nemovitosti
+0098	TEXT	Ostatní
+0099	TEXT	Co tě baví, může posloužit i dál
+0100	TEXT	Ve tvém okolí je víc věcí, než se vejde do jednoho obchodu.
+0101	TEXT	Fotoaparát od někoho z vedlejší ulice. Stan od dalšího. Rostliny, nářadí, vybavení na oslavu, přívěs nebo profesionální technika. Evorios ukáže, co je zrovna k dispozici poblíž.
+0102	TEXT	Baví tě rostliny?
+0103	TEXT	Nabídni přebytky sazenic, semínka, pokojovky nebo sezonní květiny.
+0104	TEXT	Tvoříš?
+0105	TEXT	Nabídni svoje výrobky nebo obrazy a prodej to, co chceš poslat dál.
+0106	TEXT	Leží ti něco doma?
+0107	TEXT	Nářadí, kajak nebo fotoaparát, který skoro nepoužíváš, může zrovna někdo shánět. Půjč ho nebo prodej.
+0108	TEXT	Něco potřebuješ?
+0109	TEXT	Než to koupíš, podívej se, jestli to někdo poblíž nepůjčuje.
+0110	TEXT	Půjč si, co potřebuješ. Vydělej na tom, co už máš. Všechno poblíž.
+0111	TEXT	Začni po svém
+0112	TEXT	Začni tím, co máš doma.
+0113	TEXT	Klidně začni jednou věcí. Další přidáš, až budeš chtít. Postupně uvidíš, co lidé v okolí hledají.
+0114	TEXT	Začni
+0115	TEXT	Nabídni věc, kterou skoro nepoužíváš
+0116	TEXT	Vyfoť ji, doplň pár údajů a zveřejni nabídku.
+0117	TEXT	→
+0118	TEXT	Zjisti
+0119	TEXT	Co lidi v okolí zajímá
+0120	TEXT	Podle zájmu o nabídky uvidíš, co se ve tvém okolí hledá.
+0121	TEXT	→
+0122	TEXT	Pokračuj
+0123	TEXT	Najdi, co ti funguje
+0124	TEXT	Když se dobře půjčuje nebo prodává určitý typ věcí — třeba šaty, rostliny nebo kostýmy — můžeš se na něj zaměřit.
+0125	TEXT	Evorios je pro běžné lidi i profesionály.
+0126	TEXT	Evorios z obou stran
+0127	TEXT	Místní tržiště pro
+0128	TEXT	obě strany
+0129	TEXT	jedné transakce
+0130	ATTR img.alt	Možnost vydělat
+0131	TEXT	Chci nabídnout
+0132	TEXT	Nabídni svoje věci.
+0133	TEXT	A vydělávej na nich.
+0134	TEXT	Máš nářadí, fotoaparát nebo vybavení, které většinu času leží doma? Nabídni ho k půjčení. U některých pronájmů lze použít vratnou kauci a předání i vrácení zaznamenat přes QR kód.
+0135	TEXT	✓ Nabídneš jen to, co chceš
+0136	TEXT	✓ Cenu si nastavíš sám
+0137	TEXT	✓ S vytvořením nabídky ti pomohou nástroje v aplikaci
+0138	TEXT	✓ U pronájmů lze použít kauci
+0139	ATTR img.alt	Možnost ušetřit
+0140	TEXT	Chci si půjčit
+0141	TEXT	Půjč si místo nákupu.
+0142	TEXT	Plať jen za dobu, kdy věc potřebuješ.
+0143	TEXT	Potřebuješ na víkend wapku nebo fotoaparát na cestu? Podívej se, co je poblíž, a půjč si to jen na dobu, kdy to opravdu využiješ.
+0144	TEXT	✓ Najdi věci ve svém okolí
+0145	TEXT	✓ Zaplať jen za dobu půjčení
+0146	TEXT	✓ Podívej se na ověřené profily
+0147	TEXT	✓ Funguje to i na cestách
+0148	TEXT	Jeden účet, jedno místní tržiště. Půjčuj, nakupuj, prodávej, daruj nebo prostě najdi to, co zrovna potřebuješ.
+0149	TEXT	Chci nabídnout
+0150	TEXT	Využij líp
+0151	TEXT	to, co už máš
+0152	TEXT	Nepotřebuješ sklad ani obchod. Začni věcmi, které už máš, a rozhodni se, jestli je půjčíš, prodáš nebo daruješ.
+0153	TEXT	Když něco hledáš
+0154	TEXT	Potřebuješ to?
+0155	TEXT	Nejdřív se podívej poblíž
+0156	TEXT	než začneš hledat všude možně.
+0157	TEXT	Začni ve svém okolí. Třeba je ta věc pár minut od tebe — k půjčení, ke koupi nebo zdarma.
+0158	TEXT	Jak to funguje
+0159	TEXT	Půjčení ve třech krocích
+0160	TEXT	1
+0161	TEXT	Vyfoť věc a vytvoř nabídku
+0162	TEXT	Přidej fotku a základní údaje. Nástroje v aplikaci ti mohou pomoct s názvem, kategorií i návrhem ceny.
+0163	TEXT	2
+0164	TEXT	Zájemce rezervuje a zaplatí
+0165	TEXT	Platba proběhne v aplikaci. Pokud je u pronájmu nastavená vratná kauce, zobrazí se před zaplacením. O rezervaci dostaneš upozornění.
+0166	TEXT	3
+0167	TEXT	Předání potvrď přes QR kód
+0168	TEXT	QR kód naskenuj při převzetí a znovu při vrácení. U obou kroků se uloží datum a čas. Další průběh platby se řídí informacemi v aplikaci.
+0169	TEXT	Tři možnosti
+0170	TEXT	Půjčit. Koupit. Zdarma. Na jednom místě.
+0171	TEXT	Půjčit
+0172	TEXT	Půjč si to na den nebo déle
+0173	TEXT	Na pár dní, týdnů nebo měsíců. U některých pronájmů může být kauce.
+0174	TEXT	Prodat
+0175	TEXT	Prodej to
+0176	TEXT	Vystav věc k prodeji a domluv se s kupujícím na předání.
+0177	TEXT	Darovat
+0178	TEXT	Daruj to někomu poblíž
+0179	TEXT	Bez peněz. Ať věc slouží dál.
+0180	TEXT	Bezpečnost
+0181	TEXT	O něco víc jistoty,
+0182	TEXT	i když se ještě neznáte
+0183	TEXT	Ověření identity
+0184	TEXT	U některých funkcí účtu může být vyžadováno ověření identity.
+0185	TEXT	Kauce u pronájmů
+0186	TEXT	U některých pronájmů může být na kartě dočasně zablokovaná vratná kauce. Podmínky uvidíš v aplikaci před zaplacením.
+0187	TEXT	Záznam předání přes QR
+0188	TEXT	QR kód naskenuj při převzetí i vrácení. Datum a čas se uloží k pronájmu.
+0189	TEXT	Hodnocení obou stran
+0190	TEXT	Každá strana přidává hodnocení samostatně. Zveřejní se podle pravidel uvedených v aplikaci.
+0191	TEXT	Na cesty
+0192	TEXT	Místní tržiště
+0193	TEXT	můžeš mít i na cestách.
+0194	TEXT	Nemusíš vozit všechno s sebou. Vyhledej město a podívej se, co je k dispozici poblíž místa, kde bydlíš.
+0195	TEXT	Najdi věc poblíž, rezervuj ji a domluv si převzetí.
+0196	TEXT	Seznam se s Mr. Evorios
+0197	TEXT	Mr. Evorios.
+0198	TEXT	Pomocník pro tvoje nabídky.
+0199	TEXT	Pomůže ti s názvem, fotkami a popisem nabídky, navrhne výchozí cenu, přeloží text nebo poradí, co udělat dál.
+0200	TEXT	💬 Pomoc přímo v aplikaci
+0201	TEXT	🌍 Piš svým jazykem
+0202	TEXT	🎙️ Hlasem nebo textem
+0203	TEXT	Tvůj pomocník
+0204	TEXT	„Ahoj, jsem Mr. Evorios. S čím ti můžu pomoct?“
+0205	TEXT	S čím pomůže
+0206	TEXT	„Pomůžu ti vytvořit nabídku, upravit popis nebo vybrat, jak věc nabídnout.“
+0207	TEXT	Nabídni nebo něco najdi
+0208	TEXT	„Řekni mi, co chceš nabídnout nebo co hledáš, a provedu tě dalšími kroky.“
+0209	TEXT	Piš tak, jak je ti přirozené. Mr. Evorios ti pomůže s nabídkou i dalším krokem.
+0210	ATTR img.alt	Mr. Evorios
+0211	TEXT	Otázky
+0212	TEXT	Jak Evorios funguje.
+0213	TEXT	Co je Evorios?
+0214	TEXT	Evorios je místní tržiště pro lidi i malé firmy. Na jednom místě můžeš věci půjčovat, kupovat, prodávat nebo darovat lidem ve svém okolí.
+0215	TEXT	Kolik můžu vydělat?
+0216	TEXT	Záleží na tom, co nabídneš, za jakou cenu a jaký je o věc v okolí zájem. V profilu uvidíš svoje výdělky i nejúspěšnější nabídky. Žádná částka není zaručená — rozhoduje tvoje nabídka a skutečný zájem lidí.
+0217	TEXT	Jak přidám první věc?
+0218	TEXT	Vytvoř si účet, klepni na Přidat nabídku a doplň fotky, název, kategorii, cenu a dostupnost. U pronájmu lze pomocí QR kódu zaznamenat převzetí i vrácení.
+0219	TEXT	Co když v mém okolí zatím není moc uživatelů?
+0220	TEXT	Začít můžeš i tak. S každou další užitečnou nabídkou mají lidé v okolí větší důvod se podívat. Nabídka i poptávka porostou s tím, jak se budou přidávat další lidé.
+0221	TEXT	Jaký je rozdíl mezi půjčením a prodejem?
+0222	TEXT	Při půjčení dostane druhý člověk věc na domluvenou dobu a potom ji vrátí. Při prodeji si ji nechá. Způsob nabídky vybereš při jejím vytváření a tam, kde je to možné, můžeš jednu věc nabídnout více způsoby.
+0223	TEXT	Jak fungují platby?
+0224	TEXT	Nájemce zaplatí v aplikaci po potvrzení rezervace. Ještě před platbou uvidí cenu pronájmu, poplatky i případnou kauci. Výplata proběhne podle postupu uvedeného u konkrétní transakce.
+0225	TEXT	K čemu slouží QR kód?
+0226	TEXT	U půjčených věcí lze přes QR kód zaznamenat převzetí a vrácení. Každé naskenování uloží datum a čas, takže je jasně vidět, kdy k předání došlo.
+0227	TEXT	Jak funguje kauce?
+0228	TEXT	U některých pronájmů může být na kartě dočasně zablokovaná vratná kauce. Její výši, podmínky a postup uvidíš v aplikaci před zaplacením. Evorios není pojišťovna a kauce není pojištění.
+0229	TEXT	Co když se při půjčení něco pokazí?
+0230	TEXT	Nejdřív kontaktuj druhou stranu přímo u daného pronájmu. Pokud se nedomluvíte, můžeš otevřít spor a přidat fotky, zprávy nebo poznámky. Při posouzení lze využít dostupné záznamy v aplikaci.
+0231	TEXT	Jak Evorios pracuje s platebními a osobními údaji?
+0232	TEXT	Platby zpracovává poskytovatel uvedený v aplikaci. Evorios nemusí zobrazovat ani ukládat celé číslo tvé karty. Platební údaje zadávej jen na oficiálních platebních obrazovkách Evorios.
+0233	TEXT	Chceš to zkusit?
+0234	TEXT	Podívej se, co je kolem tebe.
+0235	TEXT	Otevři Evorios v prohlížeči a podívej se, co je k dispozici poblíž. Nebo rovnou přidej svoji první věc.
+0236	TEXT	Otevřít Evorios →
+0237	TEXT	Stripe
+0238	TEXT	Kauce u pronájmů
+0239	TEXT	Supabase
+0240	TEXT	Pomoc s nabídkou
+0241	TEXT	Evorios™
+0242	TEXT	Nabídni dál to, co už máš
+0243	ATTR a.title	TikTok
+0244	ATTR a.title	Instagram
+0245	ATTR a.title	Facebook
+0246	TEXT	Soukromí
+0247	TEXT	Podmínky
+0248	TEXT	Vrácení plateb
+0249	TEXT	©
+0250	TEXT	Evorios · Nabídni dál to, co už máš
