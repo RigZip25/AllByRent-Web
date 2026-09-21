@@ -347,10 +347,10 @@ html.js .reveal.in{opacity:1;transform:none}
 
     <div class="dash">
       <div class="dash-lbl">Зароблено цього місяця</div>
-      <div class="dash-big">24 500 ₴</div>
-      <div class="dash-sub">Загалом <b>182 000 ₴</b></div>
+      <div class="dash-big">640 USD</div>
+      <div class="dash-sub">Загалом <b>5 820 USD</b></div>
       <div class="dash-chip"><svg viewBox="0 0 24 24"><path d="M4 17l6-6 4 4 6-7"/><path d="M20 8h-4m4 0v4"/></svg> +22% до минулого місяця</div>
-      <div class="dash-proj">Прогноз <b style="color:#1a1a1a">30 200 ₴</b> до кінця місяця</div>
+      <div class="dash-proj">Прогноз <b style="color:#1a1a1a">790 USD</b> до кінця місяця</div>
       <div class="dash-bars">
         <span style="height:22%"></span><span style="height:46%"></span><span style="height:32%" class="on"></span><span style="height:60%" class="on"></span><span style="height:40%"></span><span style="height:82%" class="on"></span><span style="height:56%" class="on"></span>
       </div>
@@ -390,12 +390,12 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="label">Скільки можуть приносити ваші речі</div>
     <h2>Заробляйте на своїх речах. Уникайте зайвих покупок.</h2>
     <p class="lead2" style="max-width:660px;margin:14px auto 0">Дві сторони однієї економіки: що більше викладаєте, то більше заробляєте — і що більше орендуєте замість купівлі, то менше витрачаєте. Рухайте повзунки й дивіться.</p>
-    <p class="market-focus" style="max-width:760px;margin:12px auto 0;color:#0d5c3a;font-weight:700">В Україні варто почати з інструментів, генераторів і техніки для дому, садового обладнання, туристичного спорядження та речей для подій.</p>
+    <p class="market-focus" style="max-width:760px;margin:12px auto 0;color:#0d5c3a;font-weight:700">У США варто почати з інструментів, садової техніки, туристичного спорядження, фотообладнання та речей для подій.</p>
 
     <div class="econ-grid">
       <div class="econ-card up">
         <div class="econ-tag">Ви заробляєте</div>
-        <div class="econ-num" id="earnNum">12 000 ₴</div>
+        <div class="econ-num" id="earnNum">320 USD</div>
         <div class="econ-per">на місяць</div>
         <div class="econ-bars" id="earnBars"></div>
         <div class="econ-sl"><span>Скільки речей викладаєте</span><span class="v" id="earnItems">10</span></div>
@@ -404,7 +404,7 @@ html.js .reveal.in{opacity:1;transform:none}
       </div>
       <div class="econ-card down">
         <div class="econ-tag">Ви заощаджуєте</div>
-        <div class="econ-num" id="saveNum">19 200 ₴</div>
+        <div class="econ-num" id="saveNum">540 USD</div>
         <div class="econ-per">на рік</div>
         <div class="econ-bars" id="saveBars"></div>
         <div class="econ-sl"><span>Скільки разів на рік орендуєте замість купівлі</span><span class="v" id="saveItems">6</span></div>
@@ -815,16 +815,16 @@ function closeMenu(){var m=document.getElementById('mobileMenu');if(m)m.classLis
   function bars(el){var s='';for(var i=0;i<8;i++)s+='<span></span>';el.innerHTML=s;}
   function setBars(el,f){var b=el.children;for(var i=0;i<b.length;i++){b[i].style.height=Math.max(6,pat[i]*f*100)+'%';}}
   function countTo(el,target){var start=parseInt(el.getAttribute('data-v')||'0',10),t0=null;
-    function step(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/500);k=1-Math.pow(1-k,3);var v=Math.round(start+(target-start)*k);el.textContent=new Intl.NumberFormat('uk-UA',{style:'currency',currency:'UAH',maximumFractionDigits:0}).format(v);if(k<1)requestAnimationFrame(step);else el.setAttribute('data-v',target);}
+    function step(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/500);k=1-Math.pow(1-k,3);var v=Math.round(start+(target-start)*k);el.textContent=new Intl.NumberFormat('uk-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(v);if(k<1)requestAnimationFrame(step);else el.setAttribute('data-v',target);}
     requestAnimationFrame(step);}
   var eS=document.getElementById('earnSlider'),eN=document.getElementById('earnNum'),eI=document.getElementById('earnItems'),eB=document.getElementById('earnBars');
-  var incPts=[[1,2000],[5,7200],[10,12000],[15,17800],[25,29400],[40,48500]];
+  var incPts=[[1,60],[5,210],[10,320],[15,470],[25,780],[40,1280]];
   bars(eB);
-  function upEarn(){var n=+eS.value,v=Math.round(lerp(incPts,n)/500)*500;eI.textContent=n;countTo(eN,v);setBars(eB,v/48500);}
+  function upEarn(){var n=+eS.value,v=Math.round(lerp(incPts,n)/10)*10;eI.textContent=n;countTo(eN,v);setBars(eB,v/1280);}
   eS.addEventListener('input',upEarn);
   var sS=document.getElementById('saveSlider'),sN=document.getElementById('saveNum'),sI=document.getElementById('saveItems'),sB=document.getElementById('saveBars');
   bars(sB);
-  function upSave(){var n=+sS.value,v=n*3200;sI.textContent=n;countTo(sN,v);setBars(sB,v/64000);}
+  function upSave(){var n=+sS.value,v=n*90;sI.textContent=n;countTo(sN,v);setBars(sB,v/1800);}
   sS.addEventListener('input',upSave);
   function fire(){eN.setAttribute('data-v','0');sN.setAttribute('data-v','0');upEarn();upSave();}
   var econ=document.querySelector('.econ'),done=false;

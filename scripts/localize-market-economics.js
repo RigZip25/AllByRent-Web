@@ -27,12 +27,12 @@ const markets = {
     focus:'No Brasil, vale testar primeiro itens para festas, som e foto, ferramentas, camping e equipamentos esportivos usados só de vez em quando.' },
   'pt-pt/index.html': { locale:'pt-PT', currency:'EUR', dash:[520,4610,640], earn:[40,145,240,355,590,970], save:60,
     focus:'Em Portugal, podem destacar-se pranchas e material de praia, campismo, ferramentas, bicicletas e equipamento para festas.' },
-  'ru/index.html': { locale:'ru-RU', currency:'RUB', dash:[52000,386000,64000], earn:[4200,15000,25000,37000,61000,101000], save:6500,
-    focus:'Чаще всего стоит начинать с инструмента, садовой техники, туристического снаряжения, фотооборудования и вещей для мероприятий.' },
+  'ru/index.html': { locale:'ru-US', currency:'USD', dash:[640,5820,790], earn:[60,210,320,470,780,1280], save:90,
+    focus:'В США чаще всего стоит начинать с инструмента, садовой техники, туристического снаряжения, фотооборудования и вещей для мероприятий.' },
   'sk/index.html': { locale:'sk-SK', currency:'EUR', dash:[510,4520,630], earn:[40,145,235,350,580,950], save:60,
     focus:'Na Slovensku sa oplatí začať náradím, záhradnou technikou, bicyklami, kempingovou výbavou a vecami na oslavy.' },
-  'uk/index.html': { locale:'uk-UA', currency:'UAH', dash:[24500,182000,30200], earn:[2000,7200,12000,17800,29400,48500], save:3200,
-    focus:'В Україні варто почати з інструментів, генераторів і техніки для дому, садового обладнання, туристичного спорядження та речей для подій.' }
+  'uk/index.html': { locale:'uk-US', currency:'USD', dash:[640,5820,790], earn:[60,210,320,470,780,1280], save:90,
+    focus:'У США варто почати з інструментів, садової техніки, туристичного спорядження, фотообладнання та речей для подій.' }
 };
 
 const roundExpr = {
@@ -48,10 +48,10 @@ for (const [file, m] of Object.entries(markets)) {
   let s = fs.readFileSync(file, 'utf8');
   const fmt = new Intl.NumberFormat(m.locale, {style:'currency', currency:m.currency, maximumFractionDigits:0});
   s = s.replace(/<div class="dash-big">[\s\S]*?<\/div>/, `<div class="dash-big">${fmt.format(m.dash[0])}</div>`);
-  s = s.replace(/(<div class="dash-sub">[\s\S]*?<b>)[\s\S]*?(<\/b><\/div>)/, `$1${fmt.format(m.dash[1])}$2`);
-  s = s.replace(/(<div class="dash-proj">[\s\S]*?<b[^>]*>)[\s\S]*?(<\/b>[\s\S]*?<\/div>)/, `$1${fmt.format(m.dash[2])}$2`);
-  s = s.replace(/(<div class="econ-num" id="earnNum">)[\s\S]*?(<\/div>)/, `$1${fmt.format(m.earn[2])}$2`);
-  s = s.replace(/(<div class="econ-num" id="saveNum">)[\s\S]*?(<\/div>)/, `$1${fmt.format(m.save * 6)}$2`);
+  s = s.replace(/(<div class="dash-sub">[\s\S]*?<b>)[\s\S]*?(<\/b><\/div>)/, (_, a, b) => `${a}${fmt.format(m.dash[1])}${b}`);
+  s = s.replace(/(<div class="dash-proj">[\s\S]*?<b[^>]*>)[\s\S]*?(<\/b>[\s\S]*?<\/div>)/, (_, a, b) => `${a}${fmt.format(m.dash[2])}${b}`);
+  s = s.replace(/(<div class="econ-num" id="earnNum">)[\s\S]*?(<\/div>)/, (_, a, b) => `${a}${fmt.format(m.earn[2])}${b}`);
+  s = s.replace(/(<div class="econ-num" id="saveNum">)[\s\S]*?(<\/div>)/, (_, a, b) => `${a}${fmt.format(m.save * 6)}${b}`);
 
   s = s.replace(/(<div class="section econ reveal">[\s\S]*?<p class="lead2"[^>]*>[\s\S]*?<\/p>)(?:\s*<p class="market-focus"[^>]*>[\s\S]*?<\/p>)?/, `$1\n    <p class="market-focus" style="max-width:760px;margin:12px auto 0;color:#0d5c3a;font-weight:700">${m.focus}</p>`);
 
