@@ -347,10 +347,10 @@ html.js .reveal.in{opacity:1;transform:none}
 
     <div class="dash">
       <div class="dash-lbl">Ganho neste mês</div>
-      <div class="dash-big">R$ 1.540</div>
-      <div class="dash-sub">No total <b>R$ 14.600</b></div>
+      <div class="dash-big">R$ 2.800</div>
+      <div class="dash-sub">No total <b>R$ 20.800</b></div>
       <div class="dash-chip"><svg viewBox="0 0 24 24"><path d="M4 17l6-6 4 4 6-7"/><path d="M20 8h-4m4 0v4"/></svg> +22% vs mês passado</div>
-      <div class="dash-proj">Projeção de <b style="color:#1a1a1a">R$ 1.900</b> até o fim do mês</div>
+      <div class="dash-proj">Projeção de <b style="color:#1a1a1a">R$ 3.450</b> até o fim do mês</div>
       <div class="dash-bars">
         <span style="height:22%"></span><span style="height:46%"></span><span style="height:32%" class="on"></span><span style="height:60%" class="on"></span><span style="height:40%"></span><span style="height:82%" class="on"></span><span style="height:56%" class="on"></span>
       </div>
@@ -390,11 +390,12 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="label">Quanto seus itens podem render</div>
     <h2>Quanto mais você coloca, mais rende.</h2>
     <p class="lead2" style="max-width:660px;margin:14px auto 0">Dois lados de uma mesma economia: quanto mais você anuncia, mais ganha — e quanto mais aluga em vez de comprar, menos gasta. Arraste os controles e veja.</p>
+    <p class="market-focus" style="max-width:760px;margin:12px auto 0;color:#0d5c3a;font-weight:700">No Brasil, vale testar primeiro itens para festas, som e foto, ferramentas, camping e equipamentos esportivos usados só de vez em quando.</p>
 
     <div class="econ-grid">
       <div class="econ-card up">
         <div class="econ-tag">Você ganha</div>
-        <div class="econ-num" id="earnNum">R$ 480</div>
+        <div class="econ-num" id="earnNum">R$ 1.400</div>
         <div class="econ-per">por mês</div>
         <div class="econ-bars" id="earnBars"></div>
         <div class="econ-sl"><span>Itens que você anuncia</span><span class="v" id="earnItems">10</span></div>
@@ -403,7 +404,7 @@ html.js .reveal.in{opacity:1;transform:none}
       </div>
       <div class="econ-card down">
         <div class="econ-tag">Você economiza</div>
-        <div class="econ-num" id="saveNum">R$ 720</div>
+        <div class="econ-num" id="saveNum">R$ 2.280</div>
         <div class="econ-per">por ano</div>
         <div class="econ-bars" id="saveBars"></div>
         <div class="econ-sl"><span>Vezes que aluga em vez de comprar / ano</span><span class="v" id="saveItems">6</span></div>
@@ -814,16 +815,16 @@ function closeMenu(){var m=document.getElementById('mobileMenu');if(m)m.classLis
   function bars(el){var s='';for(var i=0;i<8;i++)s+='<span></span>';el.innerHTML=s;}
   function setBars(el,f){var b=el.children;for(var i=0;i<b.length;i++){b[i].style.height=Math.max(6,pat[i]*f*100)+'%';}}
   function countTo(el,target){var start=parseInt(el.getAttribute('data-v')||'0',10),t0=null;
-    function step(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/500);k=1-Math.pow(1-k,3);var v=Math.round(start+(target-start)*k);el.textContent='R$ '+v.toLocaleString('pt-BR');if(k<1)requestAnimationFrame(step);else el.setAttribute('data-v',target);}
+    function step(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/500);k=1-Math.pow(1-k,3);var v=Math.round(start+(target-start)*k);el.textContent=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0}).format(v);if(k<1)requestAnimationFrame(step);else el.setAttribute('data-v',target);}
     requestAnimationFrame(step);}
   var eS=document.getElementById('earnSlider'),eN=document.getElementById('earnNum'),eI=document.getElementById('earnItems'),eB=document.getElementById('earnBars');
-  var incPts=[[1,80],[5,300],[10,480],[15,700],[25,1200],[40,2000]];
+  var incPts=[[1,230],[5,850],[10,1400],[15,2050],[25,3400],[40,5600]];
   bars(eB);
-  function upEarn(){var n=+eS.value,v=Math.round(lerp(incPts,n)/10)*10;eI.textContent=n;countTo(eN,v);setBars(eB,v/2000);}
+  function upEarn(){var n=+eS.value,v=Math.round(lerp(incPts,n)/50)*50;eI.textContent=n;countTo(eN,v);setBars(eB,v/5600);}
   eS.addEventListener('input',upEarn);
   var sS=document.getElementById('saveSlider'),sN=document.getElementById('saveNum'),sI=document.getElementById('saveItems'),sB=document.getElementById('saveBars');
   bars(sB);
-  function upSave(){var n=+sS.value,v=n*120;sI.textContent=n;countTo(sN,v);setBars(sB,v/2400);}
+  function upSave(){var n=+sS.value,v=n*380;sI.textContent=n;countTo(sN,v);setBars(sB,v/7600);}
   sS.addEventListener('input',upSave);
   function fire(){eN.setAttribute('data-v','0');sN.setAttribute('data-v','0');upEarn();upSave();}
   var econ=document.querySelector('.econ'),done=false;

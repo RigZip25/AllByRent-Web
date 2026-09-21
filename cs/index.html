@@ -351,10 +351,10 @@ html.js .reveal.in{opacity:1;transform:none}
 <p style="max-width:640px;margin:14px auto 0">Přidej věci, které chceš nabídnout, a u každé zvol, jestli ji půjčíš, prodáš nebo daruješ. Nabídky i přehled o výdělcích máš na jednom místě.</p>
 <div class="dash">
 <div class="dash-lbl">Tento měsíc</div>
-<div class="dash-big">8 450 Kč</div>
-<div class="dash-sub">Celkem <b>79 300 Kč</b></div>
+<div class="dash-big">12 500 Kč</div>
+<div class="dash-sub">Celkem <b>93 600 Kč</b></div>
 <div class="dash-chip"><svg viewbox="0 0 24 24"><path d="M4 17l6-6 4 4 6-7"></path><path d="M20 8h-4m4 0v4"></path></svg> +18 % oproti minulému měsíci</div>
-<div class="dash-proj">Odhad <b style="color:#1a1a1a">10 000 Kč</b> do konce měsíce</div>
+<div class="dash-proj">Odhad <b style="color:#1a1a1a">15 400 Kč</b> do konce měsíce</div>
 <div class="dash-bars">
 <span style="height:22%"></span><span style="height:46%"></span><span class="on" style="height:32%"></span><span class="on" style="height:60%"></span><span style="height:40%"></span><span class="on" style="height:82%"></span><span class="on" style="height:56%"></span>
 </div>
@@ -391,10 +391,11 @@ html.js .reveal.in{opacity:1;transform:none}
 <div class="label">Věci, které nepoužíváš, pořád mají hodnotu</div>
 <h2>Jedno hledání. Více možností.</h2>
 <p class="lead2" style="max-width:660px;margin:14px auto 0">Na Evorios můžeš věci půjčovat i si je půjčovat, nakupovat, prodávat a nacházet je i zdarma. U každé nabídky si vybereš, co ti dává smysl.</p>
+    <p class="market-focus" style="max-width:760px;margin:12px auto 0;color:#0d5c3a;font-weight:700">V Česku dává smysl začít s nářadím, koly, kempingovou výbavou, zahradní technikou a vybavením na oslavy.</p>
 <div class="econ-grid">
 <div class="econ-card up">
 <div class="econ-tag">Můžeš vydělat</div>
-<div class="econ-num" id="earnNum">2 500 Kč</div>
+<div class="econ-num" id="earnNum">6 800 Kč</div>
 <div class="econ-per">za měsíc</div>
 <div class="econ-bars" id="earnBars"></div>
 <div class="econ-sl"><span>Počet nabízených věcí</span><span class="v" id="earnItems">10</span></div>
@@ -403,7 +404,7 @@ html.js .reveal.in{opacity:1;transform:none}
 </div>
 <div class="econ-card down">
 <div class="econ-tag">Můžeš ušetřit</div>
-<div class="econ-num" id="saveNum">4 000 Kč</div>
+<div class="econ-num" id="saveNum">10 800 Kč</div>
 <div class="econ-per">za rok</div>
 <div class="econ-bars" id="saveBars"></div>
 <div class="econ-sl"><span>Kolikrát za rok si věc půjčíš místo koupě</span><span class="v" id="saveItems">6</span></div>
@@ -776,16 +777,16 @@ function closeMenu(){var m=document.getElementById('mobileMenu');if(m)m.classLis
   function bars(el){var s='';for(var i=0;i<8;i++)s+='<span></span>';el.innerHTML=s;}
   function setBars(el,f){var b=el.children;for(var i=0;i<b.length;i++){b[i].style.height=Math.max(6,pat[i]*f*100)+'%';}}
   function countTo(el,target){var start=parseInt(el.getAttribute('data-v')||'0',10),t0=null;
-    function step(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/500);k=1-Math.pow(1-k,3);var v=Math.round(start+(target-start)*k);el.textContent='$'+v.toLocaleString('en-US');if(k<1)requestAnimationFrame(step);else el.setAttribute('data-v',target);}
+    function step(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/500);k=1-Math.pow(1-k,3);var v=Math.round(start+(target-start)*k);el.textContent=new Intl.NumberFormat('cs-CZ',{style:'currency',currency:'CZK',maximumFractionDigits:0}).format(v);if(k<1)requestAnimationFrame(step);else el.setAttribute('data-v',target);}
     requestAnimationFrame(step);}
   var eS=document.getElementById('earnSlider'),eN=document.getElementById('earnNum'),eI=document.getElementById('earnItems'),eB=document.getElementById('earnBars');
-  var incPts=[[1,80],[5,300],[10,480],[15,700],[25,1200],[40,2000]];
+  var incPts=[[1,1200],[5,4200],[10,6800],[15,9800],[25,15800],[40,26000]];
   bars(eB);
-  function upEarn(){var n=+eS.value,v=Math.round(lerp(incPts,n)/10)*10;eI.textContent=n;countTo(eN,v);setBars(eB,v/2000);}
+  function upEarn(){var n=+eS.value,v=Math.round(lerp(incPts,n)/100)*100;eI.textContent=n;countTo(eN,v);setBars(eB,v/26000);}
   eS.addEventListener('input',upEarn);
   var sS=document.getElementById('saveSlider'),sN=document.getElementById('saveNum'),sI=document.getElementById('saveItems'),sB=document.getElementById('saveBars');
   bars(sB);
-  function upSave(){var n=+sS.value,v=n*120;sI.textContent=n;countTo(sN,v);setBars(sB,v/2400);}
+  function upSave(){var n=+sS.value,v=n*1800;sI.textContent=n;countTo(sN,v);setBars(sB,v/36000);}
   sS.addEventListener('input',upSave);
   function fire(){eN.setAttribute('data-v','0');sN.setAttribute('data-v','0');upEarn();upSave();}
   var econ=document.querySelector('.econ'),done=false;

@@ -347,10 +347,10 @@ html.js .reveal.in{opacity:1;transform:none}
 
     <div class="dash">
       <div class="dash-lbl">Guadagnato questo mese</div>
-      <div class="dash-big">1.540 €</div>
-      <div class="dash-sub">In totale <b>14.600 €</b></div>
+      <div class="dash-big">560 €</div>
+      <div class="dash-sub">In totale <b>4980 €</b></div>
       <div class="dash-chip"><svg viewBox="0 0 24 24"><path d="M4 17l6-6 4 4 6-7"/><path d="M20 8h-4m4 0v4"/></svg> +22% rispetto al mese scorso</div>
-      <div class="dash-proj">Previsione <b style="color:#1a1a1a">1.900 €</b> a fine mese</div>
+      <div class="dash-proj">Previsione <b style="color:#1a1a1a">690 €</b> a fine mese</div>
       <div class="dash-bars">
         <span style="height:22%"></span><span style="height:46%"></span><span style="height:32%" class="on"></span><span style="height:60%" class="on"></span><span style="height:40%"></span><span style="height:82%" class="on"></span><span style="height:56%" class="on"></span>
       </div>
@@ -390,11 +390,12 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="label">Quanto possono rendere i tuoi oggetti</div>
     <h2>Più ci metti, più rende.</h2>
     <p class="lead2" style="max-width:660px;margin:14px auto 0">Due facce di un'unica economia: più pubblichi, più guadagni — e più noleggi invece di comprare, meno spendi. Trascina i cursori e guarda.</p>
+    <p class="market-focus" style="max-width:760px;margin:12px auto 0;color:#0d5c3a;font-weight:700">In Italia possono funzionare bene attrezzature per eventi, foto e video, utensili, campeggio e articoli stagionali.</p>
 
     <div class="econ-grid">
       <div class="econ-card up">
         <div class="econ-tag">Guadagni</div>
-        <div class="econ-num" id="earnNum">480 €</div>
+        <div class="econ-num" id="earnNum">260 €</div>
         <div class="econ-per">al mese</div>
         <div class="econ-bars" id="earnBars"></div>
         <div class="econ-sl"><span>Oggetti che pubblichi</span><span class="v" id="earnItems">10</span></div>
@@ -403,7 +404,7 @@ html.js .reveal.in{opacity:1;transform:none}
       </div>
       <div class="econ-card down">
         <div class="econ-tag">Risparmi</div>
-        <div class="econ-num" id="saveNum">720 €</div>
+        <div class="econ-num" id="saveNum">390 €</div>
         <div class="econ-per">all'anno</div>
         <div class="econ-bars" id="saveBars"></div>
         <div class="econ-sl"><span>Volte che noleggi invece di comprare / anno</span><span class="v" id="saveItems">6</span></div>
@@ -814,16 +815,16 @@ function closeMenu(){var m=document.getElementById('mobileMenu');if(m)m.classLis
   function bars(el){var s='';for(var i=0;i<8;i++)s+='<span></span>';el.innerHTML=s;}
   function setBars(el,f){var b=el.children;for(var i=0;i<b.length;i++){b[i].style.height=Math.max(6,pat[i]*f*100)+'%';}}
   function countTo(el,target){var start=parseInt(el.getAttribute('data-v')||'0',10),t0=null;
-    function step(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/500);k=1-Math.pow(1-k,3);var v=Math.round(start+(target-start)*k);el.textContent=v.toLocaleString('it-IT')+' €';if(k<1)requestAnimationFrame(step);else el.setAttribute('data-v',target);}
+    function step(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/500);k=1-Math.pow(1-k,3);var v=Math.round(start+(target-start)*k);el.textContent=new Intl.NumberFormat('it-IT',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(v);if(k<1)requestAnimationFrame(step);else el.setAttribute('data-v',target);}
     requestAnimationFrame(step);}
   var eS=document.getElementById('earnSlider'),eN=document.getElementById('earnNum'),eI=document.getElementById('earnItems'),eB=document.getElementById('earnBars');
-  var incPts=[[1,80],[5,300],[10,480],[15,700],[25,1200],[40,2000]];
+  var incPts=[[1,45],[5,160],[10,260],[15,385],[25,640],[40,1050]];
   bars(eB);
-  function upEarn(){var n=+eS.value,v=Math.round(lerp(incPts,n)/10)*10;eI.textContent=n;countTo(eN,v);setBars(eB,v/2000);}
+  function upEarn(){var n=+eS.value,v=Math.round(lerp(incPts,n)/5)*5;eI.textContent=n;countTo(eN,v);setBars(eB,v/1050);}
   eS.addEventListener('input',upEarn);
   var sS=document.getElementById('saveSlider'),sN=document.getElementById('saveNum'),sI=document.getElementById('saveItems'),sB=document.getElementById('saveBars');
   bars(sB);
-  function upSave(){var n=+sS.value,v=n*120;sI.textContent=n;countTo(sN,v);setBars(sB,v/2400);}
+  function upSave(){var n=+sS.value,v=n*65;sI.textContent=n;countTo(sN,v);setBars(sB,v/1300);}
   sS.addEventListener('input',upSave);
   function fire(){eN.setAttribute('data-v','0');sN.setAttribute('data-v','0');upEarn();upSave();}
   var econ=document.querySelector('.econ'),done=false;
